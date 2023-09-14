@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results</h1>
+    <ul>
+        {% for vulnerability in vulnerabilities %}
+        <li>
+            <strong>CVE ID:</strong>{{vulnerability['cve_id']}}<br>
+            <strong>Description:</strong>{{vulnerability['description']}}<br>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

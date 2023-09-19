@@ -4,14 +4,17 @@
         background: #000;
         margin: 0;
         padding: 0;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-position: center;
         margin-left: 10px;
         margin-right: 10px;
     }
 }
-
+html{
+    background: url(bg1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 nav {
     position: relative;
     width: auto;

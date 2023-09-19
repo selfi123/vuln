@@ -22,6 +22,8 @@ def scan_network(target_ip):
     nm = nmap.PortScanner()
     nm.scan(hosts=target_ip, arguments='-sV --script vulners')
     vulnerabilities = []
+    unique_cve_ids = set()  
+
     for host in nm.all_hosts():
         host_data = nm[host]
         if 'tcp' in host_data:
@@ -30,9 +32,14 @@ def scan_network(target_ip):
                     vulners_output = port_data['script']['vulners']
                     cve_ids = re.findall(r'CVE-\d+-\d+', vulners_output)
                     for cve_id in cve_ids:
-                        description = get_cve_description(cve_id)
-                        vulnerabilities.append({'cve_id': cve_id, 'description': description})
+                        unique_cve_ids.add(cve_id)  
+
+    for cve_id in unique_cve_ids:
+        description = get_cve_description(cve_id)
+        vulnerabilities.append({'cve_id': cve_id, 'description': description})
+
     return vulnerabilities
+
 
 def get_cve_description(cve_id):
     cursor.execute("SELECT description FROM cve_entries WHERE cve_id = %s", (cve_id,))

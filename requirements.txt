@@ -1,0 +1,4 @@
+flask
+nmap
+python-nmap
+mysql-connector

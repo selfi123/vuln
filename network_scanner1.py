@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import mysql.connector
 import nmap
 import re
+import requests
 
 app = Flask(__name__,template_folder='templates',static_folder='static')
 db_connection = mysql.connector.connect(
@@ -35,6 +36,9 @@ def index():
         return render_template('result.html', vulnerabilities=vulnerabilities)
     return render_template('index1.html')  # Renders index1.html from the templates folder
 
+@app.route('/')
+def login():
+    return render_template('login.php')
 
 def scan_network(target_ip):
     nm = nmap.PortScanner()

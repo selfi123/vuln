@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>ExploSure</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="/static/Loginstyle.css">
-  <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="./Loginstyle.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='loginstyle.css') }}">
+  <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
 </head>
 <body bgcolorgba(80,80,80,0.9)>
 <!-- partial:index.partial.html -->
@@ -52,6 +52,7 @@
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Sign Up</h4>
 											<div class="form-group">
+												<form action="/selfi123.github.io/login.php" method="POST">
 												<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
 												<i class="input-icon uil uil-user"></i>
 											</div>	
@@ -63,7 +64,11 @@
 												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
-											<a href="#" class="btn mt-4">submit</a>
+									        <input type="submit" value="LOGIN" class="btn mt-4">
+										</form>
+
+                                      
+											
 				      					</div>
 			      					</div>
 			      				</div>

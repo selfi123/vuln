@@ -10,10 +10,10 @@ Add the icons of social media
 <Body>   
     <body background="/static/bg1.jpg">
         <nav>
-            <a href="/templates/index.html">Home</a>
-            <a href="/templates/about.html">About</a>
-            <a href="/templates/contact.html">Contact</a>
-            <a href="/templates/login.html">Register</a>
+            <a href="{{ url_for('welcome') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('register') }}">Register</a>
         </nav>
         
     <div class="center">

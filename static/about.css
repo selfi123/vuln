@@ -59,4 +59,25 @@ nav a:hover{
     transition-duration: 0.5s;
     border-radius:10px;
     width:20%;
-} 
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.about-section, .mission-section, .features-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        strong {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scan Results</h1>
+    <ul>
+        {% for vulnerability in vulnerabilities %}
+        <li>
+            <strong>CVE ID:</strong> {{vulnerability['cve_id']}}<br>
+            <strong>Description:</strong> {{vulnerability['description']}}<br>
+            <strong>Solution:</strong> {{vulnerability['solution']}}<br>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

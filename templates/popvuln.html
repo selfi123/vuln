@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Vulnerabilities</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .vulnerability {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .vulnerability h3 {
+            color: #e44d26;
+        }
+
+        .vulnerability p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+    position: relative;
+    width: auto;
+    height: auto;
+
+    border-radius: 8px;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction:row;
+}
+
+nav li {
+    margin-right: 1%;
+    flex-grow: 1;
+}
+
+nav a {
+    margin-left:10px;
+    margin-right:10px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-align: center;
+}
+
+
+
+nav a:hover{
+    background-color: cyan;
+    transition-duration: 0.5s;
+    border-radius:10px;
+    width:20%;
+} 
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('welcome') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('login') }}">Register</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+
+    </nav>
+    <header>
+        <h1>Popular Vulnerabilities</h1>
+    </header>
+
+    <section>
+        <div class="vulnerability">
+            <h3>CVE-2022-22965</h3>
+            <p>The most popular CVE reported in 2022 (also known as Spring4Shell) is an extremely high-impact Injection vulnerability in Spring Framework that allows attackers to make changes remotely to a target system.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-1388</h3>
+            <p>An Identification and Authentication Failure vulnerability that enables an unauthenticated attacker with network access to remotely execute commands on a target system.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-30190</h3>
+            <p>An Injection vulnerability (also known as Folina) in which the Microsoft Windows Support Diagnostic Tool (MSDT) MSDT is called using the URL protocol from a calling application such as Word.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-26809</h3>
+            <p>An Injection vulnerability that allows an unauthorized attacker can send a specially crafted Remote Procedure Call (RPC) to remotely execute arbitrary code on a victim’s device.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-0847</h3>
+            <p>An Injection vulnerability (also known as Dirty Pipe) related to the new pipe buffer structure in the Linux Kernel that allows an unprivileged local user to use this flaw to write to pages in the page cache backed by read-only files, and as a result, escalate their privileges on a system.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-0778</h3>
+            <p>A Cryptographic Failure vulnerability that causes the OpenSSL library to enter an infinite loop when parsing an invalid certificate and can allow an attacker to trigger a Denial-of-Service (DoS).</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-1096</h3>
+            <p>An Injection vulnerability that uses type confusion in V8 in Google Chrome (prior to version 99.0.4844.84) to allow an authorized attacker to remotely read and write data on a victim’s machine.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-22963</h3>
+            <p>An Injection vulnerability in the routing functionality of Spring Cloud Function that allows an attacker to arbitrarily run commands or code on a compromised system.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-21449</h3>
+            <p>A Broken Access Control vulnerability that allows an unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM Enterprise Edition.</p>
+        </div>
+
+        <div class="vulnerability">
+            <h3>CVE-2022-26925</h3>
+            <p>An Identification and Authentication Failure vulnerability that allows unauthenticated attackers to remotely exploit and force domain controllers to authenticate them via the Windows NT LAN Manager.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Your Website Name
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Account Complaint</title>
+    <style>
+        body {
+            background-color: #282c35;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #f1c40f;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #f1c40f;
+            text-align: left;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            border: none;
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 8px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Instagram Account Complaint</h1>
+    <form action="/complain" method="post">
+        <label for="username">Account Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="userid">Account Number:</label>
+        <input type="text" id="userid" name="userid" required>
+        <label for="useproxy">Use Proxy:</label>
+        <select id="useproxy" name="useproxy">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <label for="usemultithread">Use Multithreading:</label>
+        <select id="usemultithread" name="usemultithread">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <label for="reasonid">Reason for Complaint:</label>
+        <input type="text" id="reasonid" name="reasonid" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

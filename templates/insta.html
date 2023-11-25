@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+</head>
+<body>
+
+    <h2>Complaint Form</h2>
+
+    <form action="/complaint" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="userid">User ID:</label>
+        <input type="text" id="userid" name="userid" required>
+
+        <label for="useproxy">Use Proxy?</label>
+        <select id="useproxy" name="useproxy" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="usemultithread">Use Multithreading?</label>
+        <select id="usemultithread" name="usemultithread" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="reasonid">Reason ID:</label>
+        <input type="text" id="reasonid" name="reasonid" required>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Vulnerability Scanner</title>
+    <style>
+        body {
+        font-family: Jokerman;
+        background: #000;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        
+
+                        
+        }
+
+        .parallax-container {
+            position: relative;
+            height: 100vh;
+            background-image: url('/static/index1bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .parallax-form {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #target_ip {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor:pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax-container">
+        <div class="parallax-content">
+            <h1>Vulnerability Scanner</h1>
+            <form method="POST" class="parallax-form">
+            <form method="POST" class="parallax-form" action="/index1">
+                <label for="target_ip" style="color: white;">Enter IP Address:
+                <input type="text" id="target_ip" name="target_ip" required></label>
+                <br>
+                <input type="submit" value="Scan">
+            </form>
+        </div>
+    </div>
+
+    <div style="height: 1000px; background-color: #222; color: white; text-align: center; padding: 100px;">
+        <h2>Additional Content Goes Here</h2>
+        <p>This is some content below the parallax section.</p>
+    </div>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const parallaxContainer = document.querySelector(".parallax-container");
+            let scrollPosition = window.pageYOffset;
+            parallaxContainer.style.backgroundPositionY = scrollPosition * 0.7 + "px";
+        });
+    </script>
+</body>
+</html>

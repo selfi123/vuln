@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Scan Result</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+#loading img {
+    width: 80px;
+    height: 80px;
+}
+
+#results {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+
+    </style>
+</head>
+<body>
+  <!--  <div id="loading">
+        <img src="https://giphy.com/embed/2WjpfxAI5MvC9Nl8U7" alt="Loading">
+        <p>Scanning in progress...</p>
+    </div>-->
+    <div id="results">
+
+    <h2>Network Scan Result</h2>
+    {% if devices %}
+        <table>
+            <thead>
+                <tr>
+                    <th>IP Address</th>
+                    <th>Hostname</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for device in devices %}
+                    <tr>
+                        <td>{{ device['ip'] }}</td>
+                        <td>{{ device['hostname'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No devices found.</p>
+    {% endif %}
+    </div>
+    <!--<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("results").style.display = "none";
+        });
+    </script>-->
+</body>
+</html>

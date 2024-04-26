@@ -1,4 +1,0 @@
-flask
-python-nmap
-mysql-connector
-requests

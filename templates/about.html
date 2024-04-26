@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <link id="heading-font" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" media="all" />
+    </head>
+<body>
+    <nav>
+        <a href="{{ url_for('welcome') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('login') }}">Register</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+
+    </nav>
+
+
+<body x-data="{'openDialogId': ''}" x-on:keydown.escape="openDialogId=''" class='font-body antialiased h-full font-body antialiased text-[#000000] bg-[#fcfcfc] dark:text-[#ffffff] dark:bg-[#031022]'>
+  <div class="py-11">
+    <div class="text-center flex flex-col gap-y-3 px-2 sm:mx-auto sm:max-w-xl">
+      <p class="dark:text-gray-300">Get Started</p>
+      <h1 class="font-bold text-3xl text-slate-900 dark:text-gray-100 sm:text-4xl">Let&#x27;s show the world</h1>
+      <p class="text-base dark:text-gray-400 sm:text-lg">Your Gateway to Exploration and Stress-Free Network Security</p>
+    </div>
+    <div class="grid grid-cols-2 mt-5 gap-y-5 sm:gap-y-0 lg:mx-auto lg:max-w-4xl">
+      <div class="col-span-2 sm:col-span-1"><img class="w-full bg-gray-50" alt="No alt" src="https://picsum.photos/300" /></div>
+      <div class="col-span-2 px-3 pb-3 dark:border-slate-700 border-gray-50 sm:col-span-1 sm:flex sm:flex-col sm:justify-center sm:pl-7 sm:border-t lg:border-r">
+        <h1 class="font-semibold text-gray-700 tracking-tight text-xl dark:text-gray-200 dark:divide-undefined sm:mb-2 md:my-1">Our Mission</h1>
+        <p class="text-base font-normal tracking-tight leading-relaxed dark:divide-undefined dark:text-gray-300">Our mission is to inspire and empower people to explore the world and its wonders, both near and far. We strive to provide advanced features that make the process of discovery seamless and enriching for everyone. Explosure is your trusted companion in your quest for knowledge, adventure, and connection.</p>
+      </div>
+      <div class="col-span-2 px-3 pb-3 order-3 dark:border-slate-700 border-gray-50 sm:col-span-1 sm:flex sm:flex-col sm:justify-center sm:pl-7 sm:order-none sm:border-b lg:border-l">
+        <h1 class="font-semibold text-gray-700 tracking-tight text-xl dark:text-gray-200 dark:divide-undefined sm:mb-2 md:my-1">What Sets Us Apart?</h1>
+        <p class="text-base font-normal tracking-tight leading-relaxed dark:divide-undefined dark:text-gray-300">Customized Exploration Plans: Our platform provides advanced AI-powered recommendations to tailor exploration plans based on your interests, budget, and time. Say goodbye to generic itineraries; we create experiences that are uniquely yours.</p>
+      </div>
+      <div class="col-span-2 order-2 sm:col-span-1 sm:order-none"><img class="w-full bg-gray-50" alt="No alt" src="https://picsum.photos/300/300" /></div>
+    </div>
+  </div>
+  &nbsp;
+
+
+
+
+
+    <div class="">
+    <div class="text-center px-3 py-16 max-w-7xl mx-auto">
+      <h1 class="font-black tracking-tight text-slate-900 text-3xl dark:text-slate-100 sm:text-4xl">We work as a Team!</h1>
+      <p class="mt-3 text-lg max-w-lg mx-auto">Start growing in half the time with an all-in-one website builder - no more long hours spent on the boring stuff!</p>
+      <div class="grid gap-2 mt-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+        <div class="text-center"><img class="rounded-full w-60 mx-auto mb-4 bg-blue-100" alt="No alt" src="https://images.pexels.com/photos/3333923/pexels-photo-3333923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" />
+          <h1 class="text-2xl font-bold dark:text-slate-200 text-slate-800">Abel Jorlin</h1>
+          <p class="">CEO &amp; CTO</p>
+        </div>
+      
+        <div class="text-center"><img class="rounded-full w-60 mx-auto mb-4 bg-blue-100" alt="No alt" src="https://images.pexels.com/photos/1136575/pexels-photo-1136575.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" />
+          <h1 class="text-2xl font-bold dark:text-slate-200 text-slate-800">Nidhin Suresh</h1>
+          <p class="">Marketing Director</p>
+        </div>
+      </div>
+    </div>
+ </body>
+</html>
+

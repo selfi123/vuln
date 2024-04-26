@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+        }
+
+        h1, h2 {
+            color: #00ff00;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            background-color: #1a1a1a;
+            color: #00ff00;
+        }
+
+        th, td {
+            border: 1px solid #00ff00;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007f00;
+        }
+
+        button {
+            background-color: #004400;
+            color: #00ff00;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007f00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Page</h1>
+
+    <h2>User Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in user_details %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[3] }}</td>
+                    <td><button onclick="location.href='/delete_user/{{ user[1] }}'">Delete</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>CVE Entries</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>CVE ID</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cve in cve_details %}
+                <tr>
+                    <td>{{ cve[0] }}</td>
+                    <td>{{ cve[1] }}</td>
+                    <td><button onclick="location.href='/delete_cve/{{ cve[0] }}'">Delete</button></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

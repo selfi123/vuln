@@ -1,0 +1,9 @@
+Flask
+flask-session
+mysql-connector-python
+python-nmap
+openai
+requests
+scapy
+g4f
+firebase-admin

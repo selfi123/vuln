@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Scan</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #9b97aa;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #617abe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+#loading img {
+    width: 80px;
+    height: 80px;
+}
+
+#results {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+p {
+    text-align: center;
+    color: #555;
+}
+</style>
+</head>
+<body>
+    <h2>Network Scan</h2>
+    <form action="{{ url_for('devices') }}" method="POST" style="text-align: center;">
+
+        <button type="submit" onclick="showip()" >Show the connected devices</button>
+        <div id="results" style="display: none;">
+
+            <h2>connected devices </h2>
+            {% if devices %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IP Address</th>
+                            <th>mac</th>
+                            <th>mac_name</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for device in devices %}
+                            <tr>
+                                <td>{{ device['ip'] }}</td>
+                                <td>{{ device['mac'] }}</td>
+                                <td>{{ device['mac_name'] }}</td>
+                                
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No devices found.</p>
+            {% endif %}
+            </div>
+    </form>
+    <script>
+        function showip(){
+              let a=document.getElementById('results');
+              a.style.display='block';
+
+
+        }
+    </script>
+</body>
+</html>

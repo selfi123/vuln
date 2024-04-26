@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ExploSure</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Loginstyle.css') }}">
+  <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+</head>
+<body bgcolorgba(80,80,80,0.9)>
+<!-- partial:index.partial.html -->
+<div class="section">
+	<nav>
+		<a href="{{ url_for('welcome') }}">Home</a>
+		<a href="{{ url_for('about') }}">About</a>
+		<a href="{{ url_for('contact') }}">Contact</a>
+		<a href="{{ url_for('login') }}">Register</a>
+		<a href="{{ url_for('logout') }}">Logout</a>
+
+	</nav>
+    
+		<a class="btn__link" href="#">
+		
+		</a>
+	  </div></a>
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+						<form action="{{url_for('login')}}" method="POST">
+							<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">Log In</h4>
+											<div class="form-group">
+												<input type="text" name="logname" class="form-style" placeholder="username" id="logname" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<input type="hidden" name="action" value="login1"> 
+
+											<input type="submit" value="LOG IN" class="btn mt-4">
+                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+				      					</div>
+			      					</div>
+			      			 	</div>
+							</form>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">Sign Up</h4>
+											<div class="form-group">
+												<form action="{{url_for('login')}}" method="POST">
+												<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<input type="hidden" name="action" value="register"> <!-- Add a hidden field for action -->
+
+									        <input type="submit" value="REGISTER" class="btn mt-4">
+										</form>
+										
+										<h1 style="color:black;">
+											{% if msg %}
+											<h1>{{ msg }}!</h1>
+											{% endif %}
+										</h1>
+											
+				      					</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+<!-- partial -->
+
+
+</body>
+</html>

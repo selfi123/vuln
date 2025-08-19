@@ -14,7 +14,7 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'your_secret_key_here'
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
-openai.api_key="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"
+openai.api_key=""
 
 try:
     db_connection = mysql.connector.connect(
@@ -311,3 +311,4 @@ if __name__ == '__main__':
         app.run(debug=True)
     finally:
         db_connection.close()
+
